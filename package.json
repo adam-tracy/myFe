@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "install-all": "npm install & concurrently 'npm run install/container' 'npm run install/auth' 'npm run install/dashboard' 'npm run install/marketing'",
+    "launch-all": "concurrently 'npm run launch/container' 'npm run launch/cart' 'npm run launch/products'",
+
+    "install/container": "cd apps/container && npm install",
+    "install/auth": "cd apps/auth && npm install",
+    "install/dashboard":  "cd apps/dashboard && npm install",
+    "install/marketing":  "cd apps/marketing && npm install",
+
+    "launch/container": "cd apps/container && npm run start",
+    "launch/auth": "cd apps/auth && npm run start",
+    "launch/dashboard": "cd apps/dashboard && npm run start",
+    "launch/marketing": "cd apps/marketing && npm run start"
+  },
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
